@@ -22,6 +22,8 @@ class EnlargeViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         bigphoto.image = image
+        /*　改善カ所（画像を前よりも自然体の大きさで表示）　*/
+        bigphoto.contentMode = UIViewContentMode.ScaleAspectFill
         
     }
 

@@ -37,6 +37,8 @@ class ViewController: UIViewController {
 
         }
         imagephoto.image = photos[count]
+        /*　改善カ所（画像を前よりも自然体の大きさで表示）　*/
+        imagephoto.contentMode = UIViewContentMode.ScaleAspectFit
         
     }
     
@@ -48,6 +50,8 @@ class ViewController: UIViewController {
             count = 4
         }
         imagephoto.image = photos[count]
+        /*　改善カ所（画像を前よりも自然体の大きさで表示）　*/
+        imagephoto.contentMode = UIViewContentMode.ScaleAspectFit
         
 
     }
@@ -89,13 +93,10 @@ class ViewController: UIViewController {
             count = 0
         }
         imagephoto.image = photos[count]
+        /*　改善カ所（画像を前よりも自然体の大きさで表示）　*/
+        imagephoto.contentMode = UIViewContentMode.ScaleAspectFit
         
            }
-    
-    //画面の遷移
-    @IBAction func imagephoto(sender: AnyObject) {
-    }
-
     
     
 
@@ -120,6 +121,8 @@ class ViewController: UIViewController {
         let enlargeViewController:EnlargeViewController = segue.destinationViewController as! EnlargeViewController
         
         enlargeViewController.image = photos[count]
+        timer.invalidate()
+
 
     }
     

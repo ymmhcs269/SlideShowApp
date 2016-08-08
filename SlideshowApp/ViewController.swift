@@ -112,13 +112,7 @@ class ViewController: UIViewController {
     }
     
     
-    // タップイベント.
-    func tapped(sender: UITapGestureRecognizer){
-        
-        // ViewController2 へ遷移するために Segue を呼び出す
-        performSegueWithIdentifier("toEnlargeViewController",sender: nil)
-        print(sender)
-    }
+    
 
     
     //enlargeControllerViewの内容

@@ -1,25 +1,131 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="SlideshowApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZW0-lj-pEy">
+                                <rect key="frame" x="188" y="471" width="30" height="30"/>
+                                <state key="normal" title="▶︎"/>
+                                <connections>
+                                    <action selector="startstop:" destination="BYZ-38-t0r" eventType="touchUpInside" id="deu-hS-TZw"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7sY-ww-dAL">
+                                <rect key="frame" x="104" y="471" width="34" height="30"/>
+                                <state key="normal" title="back"/>
+                                <connections>
+                                    <action selector="back:" destination="BYZ-38-t0r" eventType="touchUpInside" id="AyH-OZ-z5s"/>
+                                </connections>
+                            </button>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="next" image="alpaca.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="fFD-zp-aW2" userLabel="Imagephoto">
+                                <rect key="frame" x="73" y="194" width="261" height="185"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="68K-km-AxP">
+                                <rect key="frame" x="73" y="194" width="261" height="185"/>
+                                <connections>
+                                    <segue destination="wwP-om-ts4" kind="modal" id="Of8-zP-Umi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="baD-QL-J8K">
+                                <rect key="frame" x="258" y="471" width="57" height="30"/>
+                                <state key="normal" title="precede"/>
+                                <connections>
+                                    <action selector="precede:" destination="BYZ-38-t0r" eventType="touchUpInside" id="k4M-cP-iBR"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="baD-QL-J8K" firstAttribute="leading" secondItem="ZW0-lj-pEy" secondAttribute="trailing" constant="40" id="7Vs-nB-KeG"/>
+                            <constraint firstItem="ZW0-lj-pEy" firstAttribute="leading" secondItem="7sY-ww-dAL" secondAttribute="trailing" constant="50" id="7pg-Lq-rAe"/>
+                            <constraint firstItem="68K-km-AxP" firstAttribute="top" secondItem="fFD-zp-aW2" secondAttribute="top" id="Clg-Wf-0jW"/>
+                            <constraint firstItem="ZW0-lj-pEy" firstAttribute="baseline" secondItem="baD-QL-J8K" secondAttribute="baseline" id="HKO-gj-QuZ"/>
+                            <constraint firstItem="fFD-zp-aW2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="53" id="JAV-RT-5V8"/>
+                            <constraint firstItem="68K-km-AxP" firstAttribute="leading" secondItem="fFD-zp-aW2" secondAttribute="leading" id="V3W-2t-kss"/>
+                            <constraint firstItem="7sY-ww-dAL" firstAttribute="top" secondItem="68K-km-AxP" secondAttribute="bottom" constant="92" id="aMA-sd-PFi"/>
+                            <constraint firstItem="7sY-ww-dAL" firstAttribute="baseline" secondItem="ZW0-lj-pEy" secondAttribute="baseline" id="ass-RU-7cs"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7sY-ww-dAL" secondAttribute="bottom" constant="235" id="guS-Fz-KEL"/>
+                            <constraint firstItem="68K-km-AxP" firstAttribute="trailing" secondItem="fFD-zp-aW2" secondAttribute="trailing" id="izN-XQ-bSd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="fFD-zp-aW2" secondAttribute="trailing" constant="60" id="nmI-ba-BJi"/>
+                            <constraint firstItem="fFD-zp-aW2" firstAttribute="bottom" secondItem="68K-km-AxP" secondAttribute="bottom" id="uHd-du-yji"/>
+                            <constraint firstItem="68K-km-AxP" firstAttribute="centerX" secondItem="ZW0-lj-pEy" secondAttribute="centerX" id="vaw-QW-H5x"/>
+                            <constraint firstItem="68K-km-AxP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="174" id="vbi-XS-Hgc"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="back" destination="7sY-ww-dAL" id="Kw1-Le-TN9"/>
+                        <outlet property="imagephoto" destination="fFD-zp-aW2" id="lEU-qh-wYS"/>
+                        <outlet property="precede" destination="baD-QL-J8K" id="lYV-U1-WuB"/>
+                        <outlet property="startstop" destination="ZW0-lj-pEy" id="cMa-QN-rmr"/>
+                        <segue destination="wwP-om-ts4" kind="modal" identifier="toEnlargeViewController" id="xN7-zD-Txy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="165" y="303"/>
+        </scene>
+        <!--Enlarge View Controller-->
+        <scene sceneID="mNR-90-sus">
+            <objects>
+                <viewController storyboardIdentifier="next" id="wwP-om-ts4" customClass="EnlargeViewController" customModule="SlideshowApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9su-pw-hkA"/>
+                        <viewControllerLayoutGuide type="bottom" id="MoJ-8T-Uqx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="xaq-dM-zgd">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="JLf-By-FHD">
+                                <rect key="frame" x="20" y="144" width="374" height="272"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mOp-Ul-hta">
+                                <rect key="frame" x="311" y="531" width="34" height="30"/>
+                                <state key="normal" title="back"/>
+                                <connections>
+                                    <segue destination="Nvr-Q0-kvO" kind="unwind" unwindAction="unwind:" id="H1B-NS-VCF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="JLf-By-FHD" firstAttribute="top" secondItem="9su-pw-hkA" secondAttribute="bottom" constant="124" id="4yn-9S-Wxf"/>
+                            <constraint firstItem="MoJ-8T-Uqx" firstAttribute="top" secondItem="JLf-By-FHD" secondAttribute="bottom" constant="320" id="7le-xz-Vog"/>
+                            <constraint firstItem="JLf-By-FHD" firstAttribute="leading" secondItem="xaq-dM-zgd" secondAttribute="leadingMargin" id="l1K-lN-CLi"/>
+                            <constraint firstItem="JLf-By-FHD" firstAttribute="trailing" secondItem="xaq-dM-zgd" secondAttribute="trailingMargin" id="n0h-x3-gOp"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="bigphoto" destination="JLf-By-FHD" id="qmk-f8-rEy"/>
+                        <outlet property="view" destination="xaq-dM-zgd" id="UJa-rl-uNh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H4V-F5-5UD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="Nvr-Q0-kvO" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="685" y="285"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="alpaca.jpg" width="300" height="225"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="xN7-zD-Txy"/>
+    </inferredMetricsTieBreakers>
 </document>
